@@ -32,17 +32,17 @@ const Login = () => {
 
     return (
         <StyledLogin>
-            <form onSubmit={handleSubmit}>
+            <div className="form">
                 <h2>Login</h2>
                 <label htmlFor="email">Email</label>
                 <input type="email" onChange={(e) => setEmail(e.target.value)}/>
                 <label htmlFor="password">Password</label>
                 <input type="password" onChange={(e) => setPassword(e.target.value)}/>
-                <button type="submit">Login</button>
+                <button onClick={handleSubmit}>Login</button>
                 <p className="signup-text">
                     Don't have an account? <a href="/register">Sign up</a>
                 </p>
-            </form>
+            </div>
         </StyledLogin>
     );
 };

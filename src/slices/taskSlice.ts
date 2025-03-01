@@ -5,6 +5,7 @@ interface Task {
     title: string;
     description: string;
     status: boolean;
+    due_date: string;
 }
 
 interface TaskState {

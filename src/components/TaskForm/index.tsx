@@ -15,9 +15,8 @@ const TaskForm = ({ token, setShowForm }: { token: string, setShowForm: (val: bo
         e.preventDefault();
         try {
             const newTask = await createTask(token, { title, description, dueDate, completed: false });
-            dispatch(addTask({id: newTask.data.taskId, description, status: false, title}));
+            dispatch(addTask({id: newTask.data.taskId, description, status: false, title, due_date: dueDate}));
 
-            // Clear input fields after submission
             setTitle("");
             setDescription("");
             setDueDate("");

@@ -16,7 +16,7 @@ const StyledDashboard = styled.div`
     }
 
     .sidebar {
-        width: 250px;
+        width: 200px;
         background-color: #34495e;
         color: white;
         padding: 1.5rem;
@@ -38,8 +38,6 @@ const StyledDashboard = styled.div`
         flex: 1;
         padding: 2rem;
         background-color: #ecf0f1;
-        display: flex;
-        flex-direction: column;
         gap: 1.5rem;
         overflow-y: auto;
     }

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const StyledLogin = styled.div`
-    form {
+    .form {
         display: flex;
         flex-direction: column;
         background: white;

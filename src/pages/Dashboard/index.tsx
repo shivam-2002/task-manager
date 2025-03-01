@@ -7,7 +7,7 @@ import Navbar from "../../components/Navbar";
 import TaskForm from "../../components/TaskForm";
 import TaskList from "../../components/TaskList";
 import Modal from "react-modal";
-import './style.css'
+import '../../shared/modal.css'
 
 const Dashboard = () => {
     const token = useSelector((state: RootState) => state.auth.token);
@@ -20,7 +20,7 @@ const Dashboard = () => {
         }
     }, [token, navigate]);
 
-    if (!token) return null; // Prevent rendering while redirecting
+    if (!token) return null;
 
     return (
         <StyledDashboard>

@@ -19,19 +19,19 @@ const Register = () => {
             if (res.status === 200) {
                 toast.success("Successfully registered!", {
                     autoClose: 1000,
+                    onClose: () => {navigate("/login");}
                 });
-                navigate("/login");
+                setError("");
             } else {
                 toast.error(res.statusText);
             }
         } catch (err: any) {
             let errorMessage = "Registration failed. Try again.";
 
-            // Check if API returned a response with an error message
             if (err.response && err.response.data && err.response.data.error) {
-                errorMessage = err.response.data.error; // Extracting the "error" field
+                errorMessage = err.response.data.error;
             } else if (err.message) {
-                errorMessage = err.message; // General error (e.g., network failure)
+                errorMessage = err.message;
             }
 
             setError(errorMessage);
@@ -43,7 +43,7 @@ const Register = () => {
 
     return (
         <StyledLogin>
-            <form onSubmit={handleRegister}>
+            <div className="form">
                 <h2>Register</h2>
                 {error && <p style={{color: "red"}}>{error}</p>}
                 <label htmlFor="name">Name</label>
@@ -55,11 +55,11 @@ const Register = () => {
                 <label htmlFor="password">Password</label>
                 <input type="password" placeholder="Password" value={password}
                        onChange={(e) => setPassword(e.target.value)} required/>
-                <button type="submit">Register</button>
+                <button onClick={handleRegister}>Register</button>
                 <p>
                     Already have an account? <a href="/Login">Login</a>
                 </p>
-            </form>
+            </div>
         </StyledLogin>
     );
 };
